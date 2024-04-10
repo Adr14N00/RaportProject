@@ -1,0 +1,36 @@
+<mat-card>
+  <mat-card-content>
+    <div style="height: 100%;">
+      <p style="font-size: 2.5ch;">Raport Navigation</p>
+      <div class="form-section">
+        <mat-form-field>
+          <mat-label>Location Name</mat-label>
+          <select matNativeControl [(ngModel)]="selectedLocation" (change)="onLocationChange()">
+            @for (location of locations; track location){
+              <option [value]="location">{{ location }}</option>
+            }
+          </select>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Choose a start date</mat-label>
+          <input matInput [matDatepicker]="StartDatePicker" (dateChange)="onStartDateChange($event)">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="StartDatePicker"></mat-datepicker-toggle>
+          <mat-datepicker #StartDatePicker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Choose an end date</mat-label>
+          <input matInput [matDatepicker]="EndDatePicker" (dateChange)="onEndDateChange($event)">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="EndDatePicker"></mat-datepicker-toggle>
+          <mat-datepicker #EndDatePicker></mat-datepicker>
+        </mat-form-field>
+
+      </div>
+      <div class="buttons-section">
+        <button mat-raised-button color="primary" (click)="onConfirmClick()">Zatwierdź</button>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+

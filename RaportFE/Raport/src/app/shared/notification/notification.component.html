@@ -1,0 +1,46 @@
+@if(info){
+  <!-- @for (item of dataSourceAllTypes; track item.Id; let i = $index;) -->
+  @for(item of info; track item.message; let i = $index){
+    <div class="info">
+      {{item.message}}
+    </div>
+  }
+}
+@if (success) {
+  @for(item of success; track item.message; let i = $index){
+    <div class="success">
+      {{item.message}}
+    </div>
+
+  }
+}
+@if (warning) {
+  @for(item of warning; track item.message; let i = $index){
+    <div class="warning">
+      {{item.message}}
+    </div>
+  }
+  }
+
+@if (error){
+  @for(item of error; track item.message; let i = $index){
+    <div class="error">
+      {{item.message}}
+      <div class="spacer"></div>
+      <div >
+        <button mat-button color="warm" class="close-button" (click)="deleteError(i)">
+          <mat-icon fontIcon="close"></mat-icon>
+        </button>
+      </div>
+    </div>
+
+  }
+}
+@if(validation){
+  @for(item of validation; track item.message; let i = $index){
+    <div class="validation">
+      {{item.message}}
+    </div>
+  }
+}
+

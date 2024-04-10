@@ -1,0 +1,30 @@
+.form-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 88%;
+  width: 100%;
+  padding-top: 10px;
+  gap: 10px;
+}
+
+.buttons-section{
+  display: flex;
+  justify-content: left;
+  width: 100%;
+  padding: 10px;
+}
+
+mat-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+}
+
+mat-card-content {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}

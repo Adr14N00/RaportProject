@@ -1,0 +1,25 @@
+<div class="body">
+  <div class="container" (click)="closeOverlay()"  >
+    <div class="position-{{notificationProperties.position}}" [@fade]="{value: true, params: {time: notificationProperties.timeout + 's'}}"
+    (@fade.done)="closeOverlay()" >
+      <div >
+        <ng-container [ngSwitch]="notificationProperties.type" >
+          <ng-container *ngSwitchCase="'success'">
+            <div class="alert success">
+              <input type="checkbox" id="alert2"/>
+              <label class="close" title="close" for="alert2">
+                <i class="icon-remove"></i>
+              </label>
+              <p class="inner">
+                <span class="material-icons">done</span>
+                <span class="message">{{notificationProperties.message}}</span>
+              </p>
+            </div>
+          </ng-container>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>
+
+
