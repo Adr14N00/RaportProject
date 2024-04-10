@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    RaportApiUrl: ''
+    RaportApiUrl: 'http://localhost:5181/api'
 };
