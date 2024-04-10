@@ -5,6 +5,7 @@
 npm-debug.log
 
 # .NET
+.vs/
 bin/
 obj/
 *.user
@@ -15,4 +16,4 @@ obj/
 *.exe
 /*.lock.json
 .DS_Store
-/Log
+/Log/
