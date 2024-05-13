@@ -4,7 +4,7 @@ import { MainRaportViewComponent } from './components/main-raport-view/main-rapo
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/raport/1/10', pathMatch: 'full' }, // Przekierowanie pustej ścieżki do raportu
+  { path: '', redirectTo: '/raport/1/10', pathMatch: 'full' , canActivate: [authGuard] }, // Przekierowanie pustej ścieżki do raportu
   { path: 'raport/:page/:range', component: MainRaportViewComponent },
   { path: '**', component: PageNotFoundComponent }
 ];

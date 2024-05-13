@@ -1,0 +1,38 @@
+<div class="flex" style="height: 100%;">
+    <form #loginForm="ngForm" (ngSubmit)="submit(loginModel)">
+        <div class="flex box" style="min-width: 400px;">
+            <div class="box-header" i18n>
+                Sign in
+            </div>
+            <div class="flex box-content login-box" style="justify-content: space-around;">
+                <div class="form-row">
+                    <mat-form-field appearance="outline" class="form-input">
+                        <mat-label i18n>Email</mat-label>
+                        <input type="email" [(ngModel)]="loginModel.Email" name="email" #email="ngModel" matInput
+                            required email>
+                        <mat-error i18n [hidden]="!email.hasError('email')">
+                            Invalid email address!
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-row">
+                    <mat-form-field appearance="outline" class="form-input">
+                        <mat-label i18n>Password</mat-label>
+                        <input type="password" [(ngModel)]="loginModel.Password" name="password" #password="ngModel"
+                            minlength="4" matInput required>
+                        <mat-error i18n [hidden]="!password.valid">
+                            Password must be at least 8 characters long
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <p i18n>Forgot password?</p>
+                <button i18n [disabled]="!loginForm.form.valid" type="submit" color="primary" style="font-size: 1.25em;"
+                    mat-raised-button class="submit-btn">Sign in</button>
+
+                <mat-error i18n style="margin-top: 10px;" *ngIf="errorResponse">
+                    {{errorResponse}}
+                </mat-error>
+            </div>
+        </div>
+    </form>
+</div>
